@@ -11,7 +11,7 @@ let package = Package(
         .binaryTarget(
             name: "Magical",
             url: "https://github.com/ArlindDushi/Magical/releases/download/1.1.0/Magical.xcframework.zip",
-            checksum: "7046cbd911112a2b08a642e83b311b99cd554b44f5597b59f39f41aba76c25ec"
+            checksum: "95fdd701c4bb9b12187b8060b9a23c6a944427af26dc59a2dc717446116c689f"
         )
     ]
 )
