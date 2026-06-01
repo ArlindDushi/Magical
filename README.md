@@ -26,17 +26,17 @@ Choose version **1.1.0** (or "Up to Next Major Version").
 ```swift
 import Magical
 
-let number = Magical.getMagicNumber()
+let number = MagicalClient.getMagicNumber()
 print(number) // e.g. 4217
 
-let users = try await Magical.getUsers()
+let users = try await MagicalClient.getUsers()
 print(users.first?.firstName ?? "No users")
 ```
 
 ## API
 
 ```swift
-public enum Magical {
+public enum MagicalClient {
     /// Returns a random integer in the range 1...10000.
     public static func getMagicNumber() -> Int
 
