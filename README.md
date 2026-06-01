@@ -1,6 +1,6 @@
 # Magical
 
-A lightweight iOS SDK that generates a magic number between 1 and 10,000.
+A lightweight iOS SDK with a random number generator and async user fetching.
 
 ## Requirements
 
@@ -19,7 +19,7 @@ Paste the repository URL:
 https://github.com/ArlindDushi/Magical
 ```
 
-Choose version **1.0.0** (or "Up to Next Major Version").
+Choose version **1.1.0** (or "Up to Next Major Version").
 
 ## Usage
 
@@ -28,6 +28,9 @@ import Magical
 
 let number = Magical.getMagicNumber()
 print(number) // e.g. 4217
+
+let users = try await Magical.getUsers()
+print(users.first?.firstName ?? "No users")
 ```
 
 ## API
@@ -36,6 +39,18 @@ print(number) // e.g. 4217
 public enum Magical {
     /// Returns a random integer in the range 1...10000.
     public static func getMagicNumber() -> Int
+
+    /// Fetches all users from the DummyJSON `/users` endpoint.
+    public static func getUsers() async throws -> [User]
+}
+
+public struct User: Decodable, Sendable, Identifiable { /* ... */ }
+
+public enum MagicalError: Error, Sendable {
+    case network(underlying: Error)
+    case decoding(underlying: Error)
+    case invalidResponse(statusCode: Int?)
+    case unknown(Error)
 }
 ```
 

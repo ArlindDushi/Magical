@@ -10,8 +10,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "Magical",
-            url: "https://github.com/ArlindDushi/Magical/releases/download/1.0.0/Magical.xcframework.zip",
-            checksum: "7a4ea6c88b92bd4d08e62cea2b98eceb531ea832199be1915ac98ec4fc8442f7"
+            url: "https://github.com/ArlindDushi/Magical/releases/download/1.1.0/Magical.xcframework.zip",
+            checksum: "49550b1052ce1f2c21c6d6cb3ae0a8329219430511fd955717302f0c7db93484"
         )
     ]
 )
